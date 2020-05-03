@@ -32,8 +32,14 @@ exports.createPages = async({ actions, graphql, reporter }) => {
         return;
     }
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        let path;
+        if (node.parent.name == 'README') {
+            path = `${node.parent.relativeDirectory}/`;
+        } else {
+            path = `${node.parent.relativeDirectory}/${node.parent.name}/`
+        }
         createPage({
-            path: `${node.parent.relativeDirectory}/${node.parent.name}/`,
+            path: path,
             component: PageTemplate,
             context: {
                 id: node.id
