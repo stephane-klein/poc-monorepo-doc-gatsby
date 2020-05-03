@@ -1,0 +1,100 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "standard",
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly",
+        "process": true,
+        "page": true,
+        "browser": true
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "unicorn"
+    ],
+    "rules": {
+        "indent": [
+            "error",
+            4
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "jsx-quotes": [
+            "error",
+            "prefer-single"
+        ],      
+        "semi": [
+            "error",
+            "always"
+        ],
+        "react/prop-types": 0,
+        "space-before-function-paren": [ "error", "never" ],
+        "no-trailing-spaces": "error",
+        "no-multiple-empty-lines": "error",
+        "unicorn/filename-case": [
+            "error",
+            {
+                "case": "pascalCase"
+            }
+        ],
+        "import/order": [
+          "error",
+          {
+            "groups": [
+              "builtin",
+              "external",
+              "internal",
+              "parent",
+              "sibling",
+              "index"
+            ],
+            "newlines-between": "always"
+          }
+        ],
+        "import/no-unresolved": [0],
+        "react/no-unescaped-entities": [0]
+    },
+    "overrides": [
+        {
+            "files": [
+                "gatsby-*",
+                "index.jsx"
+            ],
+            "rules": {
+                "unicorn/filename-case": [
+                    "off"
+                ]
+            }
+        }
+    ],
+    "settings": {
+        "react": {
+            "pragma": "React",
+            "version": "dectect"
+        }
+    }
+}
