@@ -1,8 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 export default function Template({ data }) {
+    console.log(data);
     const { markdownRemark } = data;
-    const { frontmatter, html } = markdownRemark;
+    const { html } = markdownRemark;
     return (
         <div>
             <div
@@ -15,10 +16,26 @@ export default function Template({ data }) {
 
 export const pageQuery = graphql`
     query($id: String!) {
-        markdownRemark(id: { eq: $id } ) {
+        markdownRemark: markdownRemark(id: { eq: $id } ) {
             html
+        },
+        allPages: allMarkdownRemark {
+            edges {
+                node {
+                    id
+                    parent {
+                        id
+                        ... on File {
+                            id
+                            name
+                            root
+                            relativePath
+                            relativeDirectory
+                        }
+                    }
+                }
+            }
         }
     }
-`
-;
+`;
 
