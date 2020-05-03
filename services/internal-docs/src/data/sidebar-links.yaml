@@ -1,0 +1,17 @@
+- title: Home
+  link: /
+- title: Prepare your computer
+  link: /docs/prepare/
+- title: Naming convention
+  link: /docs/naming/
+- title: Urls
+  link: /docs/urls/
+- title: Services
+  link: /services/
+  items:
+    - title: Service A
+      link: /services/service_a/
+    - title: Service B
+      link: /services/service_b/
+    - title: Service C
+      link: /services/service_c/
