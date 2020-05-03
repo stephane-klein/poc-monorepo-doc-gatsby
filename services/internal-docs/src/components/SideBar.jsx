@@ -7,6 +7,11 @@ const SideBarUL = ({items}) => (
         {items.map((item, index) => (
             <li key={index}>
                 <a href={item.link}>{item.title}</a>
+                {
+                    item.items ? 
+                    <SideBarUL items={item.items} />
+                    : null
+                }
             </li>
         ))}
     </ul>
