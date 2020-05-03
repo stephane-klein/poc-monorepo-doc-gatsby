@@ -11,6 +11,15 @@ module.exports = {
                 theme_color: 'black',
                 display: 'standalone'
             }
-        }
+        },
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                name: 'markdown-pages',
+                path: `/Users/stephane/Work/github.com/stephane-klein/poc-monorepo-doc-gatsby/`,
+                ignore: ['**/internal-docs/**']
+            }
+        },
+        'gatsby-transformer-remark'
     ]
 };
